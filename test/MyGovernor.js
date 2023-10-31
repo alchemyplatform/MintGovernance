@@ -66,7 +66,7 @@ describe("MyGovernor", function () {
         const proposingValues = await afterProposingFixture();
         const { governor, proposalId } = proposingValues;
         
-        const tx = await governor.castVote(proposalId, 1);      
+        const tx = await governor.castVote(proposalId, 1);
         const receipt = await tx.wait();
         const voteCastEvent = receipt.events.find(x => x.event === 'VoteCast');
         
